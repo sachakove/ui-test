@@ -1,0 +1,47 @@
+
+
+.left-bar, .bar-content {
+    background-color: #0E1A35;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.btn-bar {
+    background-color: #0E1A35;
+    border-bottom: .1rem solid #0D172E;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1.2rem 1.7rem;
+    transition: all 0.3s;
+}
+
+.title {
+    padding: 1rem 1.2rem;
+    font-size: 1.7rem;
+    border-bottom: .1rem solid #0D172E;
+}
+
+/* .title h1 {
+    font-size: 1.3rem;
+} */
+
+.btn-bar:hover {
+    background-color: #122143;
+    cursor: pointer;
+    border-left: .3rem solid #5485FB;
+    padding: 1.2rem 1.4rem;
+}
+.selected {
+    width: 5%;
+    height: 100%;
+    background-color: #5485FB;
+    float: left;
+}
+
+i {
+    color: #5485FB;
+}

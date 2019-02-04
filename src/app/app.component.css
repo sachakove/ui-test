@@ -1,0 +1,19 @@
+.wraper {
+    height: 100%;
+    width: 100%;
+    background-color: #F6F7FA;
+    display: flex;
+    flex-direction: row;
+}
+
+
+#bar {
+    display: none;
+    height: 100%;
+    width: 13%;
+}
+
+.content {
+    height: 100%;
+    flex:1;
+}

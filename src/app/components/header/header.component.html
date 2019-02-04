@@ -1,0 +1,35 @@
+<header class="top">
+  <div class="content">
+    <div class="header-left">
+      <a href="#" class="open-bar" (click)="onOpen()"><i class="fa fa-arrow-left"></i> <i class="fa fa-bars"></i></a>
+      <form class="search-form" action="">
+        <a href="#"><i class="fa fa-search"></i></a>
+        <input type="search" class="search">
+      </form>
+    </div>
+
+    <div class="header-right">
+      <button class="add-project">+ Add Project</button>
+      <a href="#"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="bell-i"><i class="fa fa-bell"></i>
+        <svg height="11" width="11">
+          <circle cx="5.5" cy="5.5" r="5.5" fill="#5384FF" />
+          <text fill="#fff" font-size="7" x="3.5" y="8">3</text>
+        </svg>
+      </a>
+
+      <div class="user">
+        <div class="userField">
+          <img src="{{ person.pic }}" alt=""><i class="fa fa-arrow-down"></i>
+        </div>
+        <div class="userPanel">
+          <figure class="userFig">
+            <img src="{{ person.pic }}" alt="">
+          </figure>
+          <div class="userData">Hello {{ person.fullName }}!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>

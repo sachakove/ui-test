@@ -1,0 +1,154 @@
+<div class="container">
+    <div class="header">
+        <app-header (barToggle)="toggleBar($event)" [person]="person"></app-header>
+    </div>
+    <div class="content">
+        <h1>Hello {{ person.fullName }}!</h1>
+
+
+        <div class="main-content">
+            <div class="charts">
+                <!-- ###################################### Sales Box ###################################### -->
+                <div class="sales-page">
+                    <div class="page">
+                        <div class="content-top">
+                            <span>Your Sales</span>
+                            <div class="select-box">Period:
+                                <select>
+                                    <option value="last-year">Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sales-content">
+                            <!-- <canvas height="156px" width="466px" baseChart 
+                                    [data]="doughnutChartData" 
+                                    [labels]="doughnutChartLabels"
+                                    [legend]="doughnutChartLegend" 
+                                    [options]="doughnutChartOptions"
+                                    [colors]="doughnutChartColors"
+                                    [chartType]="doughnutChartType">
+                            </canvas> -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ##################################### Reports Box ##################################### -->
+                <div class="reports-page">
+                    <div class="page">
+                        <div class="content-top">
+                            <span>Reports</span>
+                            <div class="select-box">Period:
+                                <select>
+                                    <option value="last-year">Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="reports-content">
+                            <!-- <canvas baseChart width="450px" height="130px"
+                                    [datasets]="lineChartData"
+                                    [labels]="lineChartLabels"
+                                    [options]="lineChartOptions"
+                                    [colors]="lineChartColors"
+                                    [chartType]="lineChartType"></canvas> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lists">
+                <!-- ###################################### Tasks Box ####################################### -->
+                <div class="page-bottom">
+                    <div class="top">
+                        <span>Tasks</span>
+                        <div class="circles">
+                            <svg height="24" width="24">
+                                <circle cx="12" cy="12" r="12" fill="#5384FF" />
+                                <text fill="#fff" font-size="13" x="8" y="17">{{ done }}</text>
+                            </svg>&nbsp;
+                            <svg height="24" width="24">
+                                <circle cx="12" cy="12" r="12" fill="#F83C7B" />
+                                <text fill="#fff" font-size="13" x="8" y="17">{{ undone }}</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content-panel">
+                        <a href="#" class="list-content" *ngFor="let task of tasks">
+                            <div class="content-circle">
+                                <svg height="28" width="28">
+                                    <circle cx="14" cy="14" r="14" fill="#5384FF" />
+                                    <text fill="#fff" font-size="15" x="9" y="20">{{ task.task.charAt(0) }}</text>
+                                </svg>
+                            </div>
+                            <div class="tasks-info">
+                                <span>{{ task.task }}</span>
+                                <span class="tasks-remark"><i class="far fa-clock"></i>&nbsp;5 days delays</span>
+                            </div>
+                            <div class="tasks-icon">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ##################################### Messages Box #################################### -->
+                <div class="page-bottom">
+                    <div class="top">
+                        <span>Messages</span>
+                        <div class="circles">
+                            <svg height="24" width="24">
+                                <circle cx="12" cy="12" r="12" fill="#5384FF" />
+                                <text fill="#fff" font-size="13" x="8" y="17">{{ seenCount }}</text>
+                            </svg>&nbsp;
+                        </div>
+                    </div>
+                    <div class="content-panel">
+                        <ng-container *ngFor='let message of messages'>
+                            <a href="#" class="list-content" [style.background-color]="message.seen ? 'none' : '#F4F5F8'">
+                                <div class="content-circle">
+                                    <img src="{{ message.user.pic }}" alt="">
+                                </div>
+                                <div class="messages-info">
+                                    <span class="name">{{ message.user.fullName }}
+                                        <span class="messages-remark">&nbsp;&nbsp;5 minutes ago</span>
+                                    </span>
+                                    <span>{{ message.messageContent }}</span>
+                                    <span class="messages-icon">
+                                        <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+                                        <i class="fa fa-cog"></i>
+                                    </span>
+                                </div>
+                            </a>
+                        </ng-container>
+                    </div>
+                </div>
+
+                <!-- ##################################### Activity Box ##################################### -->
+                <div class="page-bottom">
+                    <div class="top">
+                        <span>Activity</span>
+                        <div class="circles">
+                            <svg height="24" width="24">
+                                <circle cx="12" cy="12" r="12" fill="#5384FF" />
+                                <text fill="#fff" font-size="13" x="4.5" y="17">10</text>
+                            </svg>&nbsp;
+                        </div>
+                    </div>
+                    <div class="content-panel">
+                        <a href="#" class="list-content" *ngFor="let act of activities">
+                            <div class="content-circle">
+                                <img src="{{ act.user.pic }}" alt="">
+                            </div>
+                            <div class="activity-info">
+                                <span class="name">{{ act.user.fullName }}&nbsp;
+                                    <span class="acti">{{ act.activity }}</span>&nbsp;
+                                    {{ act.des }}</span>
+                                <span class="activity-remark"><i class="far fa-clock"></i>&nbsp;5 days delays</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
